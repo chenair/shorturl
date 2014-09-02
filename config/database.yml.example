@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: shorturl
+  host: localhost
+  username: postgres
+  password: 1006
