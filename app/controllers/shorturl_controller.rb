@@ -14,7 +14,7 @@ class ShorturlController < ActionController::Base
       return
     end
     
-    url = Url.find_by originalurl: 'http://'+params[:url]
+    url = Url.find_by originalurl: params[:url]
     if url
       respond_to do |format|
          format.xml { render :xml => '<error>This is existing url.</error>' }
@@ -24,7 +24,7 @@ class ShorturlController < ActionController::Base
       code = generateCode(6)
       @url = Url.create shorturl: code, originalurl: params[:url]
       respond_to do |format|
-        format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?'+@url.shorturl+'</shorturl>' }
+        format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?code='+@url.shorturl+'</shorturl>' }
      end
     end
   end

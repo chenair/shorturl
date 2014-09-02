@@ -5,7 +5,7 @@ class PageController < ActionController::Base
     else
       url = Url.find_by shorturl: params[:code]
       if url
-        redirect_to url.originalurl
+        redirect_to 'http://'+ url.originalurl
       end
     end 
   end
