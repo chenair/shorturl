@@ -20,7 +20,7 @@ class ShorturlController < ActionController::Base
     
     if url
       respond_to do |format|
-         format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?code='+url.shorturl+'</shorturl>' }
+         format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base + url.shorturl+'</shorturl>' }
       end
     else
       code = generateCode(6)
@@ -28,7 +28,7 @@ class ShorturlController < ActionController::Base
       @url = Url.create shorturl: code, originalurl: inputUrl
       
       respond_to do |format|
-        format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?code='+@url.shorturl+'</shorturl>' }
+        format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base + @url.shorturl+'</shorturl>' }
       end
     end
   end
