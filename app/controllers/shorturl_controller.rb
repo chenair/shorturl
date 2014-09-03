@@ -6,26 +6,30 @@ class ShorturlController < ActionController::Base
   def service
   end
   
-  def show
-    if params[:url].blank?
+  def show 
+    inputUrl = request.query_string
+    
+    if inputUrl.blank?
       respond_to do |format|
-         format.xml { render :xml => '<error>This is invalid url.</error>' }
+         format.xml { render :xml => '<error>Invalid URL</error>' }
       end
       return
     end
     
-    url = Url.find_by originalurl: params[:url]
+    url = Url.find_by originalurl: inputUrl
+    
     if url
       respond_to do |format|
-         format.xml { render :xml => '<error>This is existing url.</error>' }
+         format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?code='+url.shorturl+'</shorturl>' }
       end
     else
-      #code = ('A'..'Z').to_a.shuffle[0,1].join + rand.to_s[1..1]
       code = generateCode(6)
-      @url = Url.create shorturl: code, originalurl: params[:url]
+      
+      @url = Url.create shorturl: code, originalurl: inputUrl
+      
       respond_to do |format|
         format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base+'?code='+@url.shorturl+'</shorturl>' }
-     end
+      end
     end
   end
   
