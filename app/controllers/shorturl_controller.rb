@@ -11,7 +11,7 @@ class ShorturlController < ActionController::Base
     
     if inputUrl.blank?
       respond_to do |format|
-         format.xml { render :xml => '<error>Invalid URL</error>' }
+         format.xml { render :xml => '<error>Invalid original url</error>' }
       end
       return
     end
@@ -23,7 +23,27 @@ class ShorturlController < ActionController::Base
          format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base + url.shorturl+'</shorturl>' }
       end
     else
-      code = generateCode(6)
+      code = ""
+      
+      for i in 0..2
+        code = generateCode(6)
+        
+        existUrl = Url.find_by shorturl: code
+        
+        if existUrl
+          # code already exists in db, need to regenerate
+          code = ""
+        else
+          break
+        end
+      end
+      
+      if code == ""
+        respond_to do |format|
+           format.xml { render :xml => '<error>Duplicate short url</error>' }
+        end
+        return
+      end
       
       @url = Url.create shorturl: code, originalurl: inputUrl
       
@@ -34,9 +54,9 @@ class ShorturlController < ActionController::Base
   end
   
   def generateCode(len)
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    chars = ("a".."z").to_a + ("0".."9").to_a + ("A".."Z").to_a
     newpass = ""
-    1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
+    1.upto(len) { |i| newpass << chars[rand(0...chars.size)] }
     return newpass
   end
   
