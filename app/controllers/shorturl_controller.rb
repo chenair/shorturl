@@ -6,12 +6,16 @@ class ShorturlController < ActionController::Base
   def service
   end
   
-  def show 
+  def show
+    # CORS
+    headers['Access-Control-Allow-Origin'] = "*"
+    
     inputUrl = request.query_string
     
     if inputUrl.blank?
       respond_to do |format|
          format.xml { render :xml => '<error>Invalid original url</error>' }
+         format.json { render :json => {error: "Invalid original url"} }
       end
       return
     end
@@ -21,6 +25,7 @@ class ShorturlController < ActionController::Base
     if url
       respond_to do |format|
          format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base + url.shorturl+'</shorturl>' }
+         format.json { render :json => {shorturl: Rails.configuration.ent_url_base + url.shorturl} }
       end
     else
       code = ""
@@ -41,6 +46,7 @@ class ShorturlController < ActionController::Base
       if code == ""
         respond_to do |format|
            format.xml { render :xml => '<error>Duplicate short url</error>' }
+           format.json { render :json => {error: "Duplicate short url"} }
         end
         return
       end
@@ -49,6 +55,7 @@ class ShorturlController < ActionController::Base
       
       respond_to do |format|
         format.xml { render :xml => '<shorturl>'+Rails.configuration.ent_url_base + @url.shorturl+'</shorturl>' }
+        format.json { render :json => {shorturl: Rails.configuration.ent_url_base + @url.shorturl} }
       end
     end
   end
