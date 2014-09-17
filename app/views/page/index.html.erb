@@ -4,11 +4,28 @@
     <title></title>
 </head>
 <body onload="load();">
+	<div id="errmsg" style="display:none;">
+		<p>
+			Oops, Sorry. 
+			<br/><br/>
+			You have clicked on an incomplete link.
+			<br/><br/>
+			Please ask the person that sent you the link to re-send the full link.
+			<br/><br/>
+			Note: This person may need to re-generate a new link if they no longer have the full link.
+			<br/><br/>
+			Sorry for the inconvenience.
+		</p>
+	</div>
+	
 	<script>
 	function load()
 	{
-		window.setTimeout(function(){ 
-			window.location.href = "<%=raw @redirctUrl %>";
+		window.setTimeout(function(){
+			if ("<%=raw @redirctUrl %>" == "")
+				document.getElementById("errmsg").style.display = "block";
+			else
+				window.location.href = "<%=raw @redirctUrl %>";
 		},100);
 	}
 	</script>
