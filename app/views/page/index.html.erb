@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 
 <html>
+<meta property="og:title" content="Support Our Entertainment Book Fundraiser">
+<meta property="og:image" content="https://media.entertainment.com/media/coupon/images/fundraisingLP/img/img-complete-pkg.png">
+<meta property="og:description" content="Buy the popular Entertainment Book and help us meet our fundraising goal!">
+
 <!--[if lte IE 9]>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js"></script>
 <![endif]-->
+
 <link href="https://media.entertainment.com/media/fundraising/css/styles.mobile.css" rel="stylesheet" type='text/css' />
 <style type="text/css" >
   @font-face {
@@ -397,11 +402,23 @@
 	
 	</div>
 	
+	<% if @redirctUrl == "invalid" %>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-52747733-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	<% end %>
+		
 	<script>
-		if ("<%=raw @redirctUrl %>" == "")
+		if ("<%=raw @redirctUrl %>" == "" || "<%=raw @redirctUrl %>" == "invalid")
 			document.getElementById("errmsg").style.display = "block";
 		else
-			window.location.href = "<%=raw @redirctUrl %>"; 
+			window.location.href = "<%=raw @redirctUrl %>";
 	</script>
 </body>
 </html>
