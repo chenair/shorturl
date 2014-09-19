@@ -4,7 +4,7 @@ class PageController < ActionController::Base
     @redirctUrl = ""
     
     if params[:code].blank?
-      # The short url is not valid
+      # No short url
     else
       url = Url.find_by shorturl: params[:code].upcase
       
@@ -16,6 +16,7 @@ class PageController < ActionController::Base
         end
       else
         # The short url is not valid
+        @redirctUrl = "invalid"
       end
     end 
   end
