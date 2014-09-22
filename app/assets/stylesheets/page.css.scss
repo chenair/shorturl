@@ -1,0 +1,351 @@
+  @font-face {
+    font-family: 'MontserratRegular';
+    src: font-url('montserrat-regular-webfont.eot');
+    src: font-url('montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('montserrat-regular-webfont.woff') format('woff'),
+    font-url('montserrat-regular-webfont.ttf') format('truetype');
+    font-weight: normal; font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MontserratBold';
+    src: font-url('montserrat-bold-webfont.eot');
+    src: font-url('montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    font-url('montserrat-bold-webfont.woff') format('woff'),
+    font-url('montserrat-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+   @font-face {
+    font-family: 'avenir_roman';
+    src: font-url('avenir-roman.eot');
+    src: font-url('avenir-roman.eot?#iefix') format('embedded-opentype'),
+    font-url('avenir-roman.woff') format('woff'),
+    font-url('avenir-roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  header {display:none !important;}
+  footer {display:none !important;}
+  #content-body {border:none medium;}
+
+
+  /*//// START VAPad styles////////*/
+  #VAPad {
+    
+	background-image:url("https://media.entertainment.com/media/freetrial/img/bg_content1.jpg");
+	background-repeat:no-repeat;
+	background-position:0 0;
+	background-color:rgba(255, 255, 255, 0);
+    background-size: cover;
+    width: 100%;
+    margin: 85px auto 0;
+    padding: 20px 20px 30px 20px;
+  }
+  
+  #VAPad .container {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 915px;
+  }
+
+  #VAPad h1 {
+    color: #2f2c26;
+    font-family: 'MontserratRegular';
+    font-size: 44px;
+    font-weight: 100;
+    line-height: 105%;
+    margin-bottom: 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+
+  span.FUNDNAME {
+    color: #14467c;
+    font-family: 'MontserratBold';
+  }
+
+  #VAPad h3 {
+    color: #2f2c26;
+    font-family:'avenir_roman';
+    font-weight: 100;
+    line-height: 105%;
+    font-size:18px;
+    margin: 10px 0 0;
+  }
+
+  #VAPad p {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .leftcolumn {
+    margin: 45px 60px 0 30px;
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+
+  form {margin-top:10px;}
+
+  .label {
+    font-family: 'avenir_roman',Arial;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .formtext {
+    padding:5px;
+    margin-top:5px;
+  }
+
+  .formBTN {
+    background-color: #ff7a0d;
+    color:#ffffff;
+    border: 0 none;
+    cursor: pointer;
+    height: 58px;
+    margin: 15px 0 20px;
+    outline: 0 none;
+    width: 200px;
+    padding: 7px 15px 7px 24px;
+    font-size:22px;
+  }
+
+  .formBTN > * {
+    display: inline-block;
+    line-height: 44px;
+    vertical-align: middle;
+  }
+
+  .formBTN > div.action {
+    background: transparent url("https://media.entertainment.com/media/coupon/images/fundraisingLP/img/whitearrow2.png") no-repeat center center;
+    height: 25px;
+    width: 30px;
+    margin-left: 20px;
+  }
+
+  .formBTN > div.action.spinner {
+    width: 25px;
+    height: 25px;
+    background: none;
+    position:relative;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    border-left:6px solid rgba(255, 255, 255, .15);
+    border-right:6px solid rgba(255, 255, 255, .15);
+    border-bottom:6px solid rgba(255, 255, 255, .15);
+    border-top:6px solid rgba(255, 255, 255,.8);
+    border-radius:100%;
+  }
+
+  #group_id_form > div {
+    color: #c3010e;
+    font-family: avenir_heavy;
+    font-size: 13px;
+    line-height: 110%;
+    margin: 10px 0 0;
+  }
+
+  .rightcolumn {
+    text-align: center;
+    width: 25%;
+    float:left;
+    padding-top: 50px;
+    min-height: 1px;
+    padding-left: 15px;
+    position: relative;
+  }
+
+  .rightcolumn img {
+ 
+	margin-left:-20px;
+  }
+
+  .h-center {
+    text-align: center;
+  }
+
+  sup {
+    font-size: 40%;
+    line-height: 0;
+    vertical-align: super;
+    position:relative;
+  }
+
+  #VAPad .bottomcolumn {
+    clear:both;
+    margin: 10px 0 0 30px;
+    width: 90%;
+    position: relative;
+  }
+
+  #VAPad .bottomcolumn h3 {
+    color: #2f2c26;
+    font-family: 'MontserratRegular';
+    font-weight: 100;
+    line-height: 115%;
+    font-size:16px;
+    margin-top:-30px;
+  }
+  
+  .alert.alert-danger {
+    margin-bottom: 5px;
+  }
+
+  @-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+  }
+
+  @-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+  }
+
+  @-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+  }
+
+  @keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+  }
+  
+/*////////// NEW RESPONSIVE STYLES ////////*/
+@media (min-width: 768px) {
+	.bannerIMG {
+	    padding-top: 50px;
+	
+	}
+	.mobileSHOW {
+		display:none;
+	}
+	.mobileHIDE {
+		display:block;
+	}
+}
+
+@media (max-width: 767px) {
+	
+	.hidden-xs {
+	    display: none !important;
+	}
+	.mobileSHOW {
+		display:none;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		padding:0;
+		margin:0;
+		}
+	.confined {
+	    margin: 0 auto;
+	    width: 320px;
+	}
+	.container {
+	    padding-left: 10px;
+	    padding-right: 10px;
+	}
+	.mobileSHOW {
+		display:block;
+		margin:20px 0 -20px;
+	}
+	.mobileHIDE {
+		display:none;
+	}
+	.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+		margin-left: -15px;
+	}
+	.navbar-fixed-top {
+		top:auto;
+	}
+	.navbar-fixed-bottom, .navbar-fixed-top {
+		position:relative;
+	}	
+	.navbar-nav {
+	    margin: 0px;
+	}
+	.navbar-brand {
+	    padding: 15px 0 0 15px;
+		width:160px;
+		height:auto;
+	}
+	.navbar {
+	    background: none repeat scroll 0 0 #fff;
+		min-height:40px;
+		margin-bottom:0px;
+		padding: 10px 0 ;
+	}
+	.navbar .navbar-nav a {
+		font-size:12px;
+	}
+	.mobileLOGO {
+		width:100%;
+	}
+	.nav > li {
+	    display: inline-block;
+	}
+	.nav > li > a {
+		padding:5px;
+		font-size:12px;
+	}
+	#VAPad {
+		margin: 0 auto;
+		padding: 10px 0;
+	    width: 320px;
+		text-align:center;
+	}
+	#VAPad .container {
+		width:300px;
+		padding:10px;
+	}
+	#VAPad h3 {
+		 font-size:16px;
+	 }
+	.mobileSHOW {
+		display:block;
+		margin:20px 0 -20px;
+	}
+	.mobileHIDE {
+		display:none;
+	}
+	.leftcolumn {
+	    float: left;
+	    position: relative;
+	    width: 100%;
+		 margin: 0 auto 40px;
+	}
+	form {
+		margin-bottom: 10px;
+	}
+	.formBTN {
+		margin:0px;
+	}
+	.bannerIMG {
+	    padding-top: 0px;
+	}
+	.bannerIMG > img {
+	    padding-top: 0px;
+	    width: 80%;
+	}
+	#VAPad .bottomcolumn {
+	    clear: both;
+	    margin: 10px 0;
+	    position: relative;
+	    width: 100%;
+	}
+	#VAPad .bottomcolumn h3 {
+		font-size:15px;
+		font-family:'avenir_roman';
+	}
+}
