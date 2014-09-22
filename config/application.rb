@@ -21,6 +21,7 @@ module ShortURL
     # config.i18n.default_locale = :de
     
     # config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     
     config.ent_url_base = 'http://shorturlstage.herokuapp.com/'
   end
