@@ -23,6 +23,6 @@ module ShortURL
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     
-    config.ent_url_base = 'http://shorturlstage.herokuapp.com/'
+    config.ent_url_base = 'http://buy.entertainment.com/'
   end
 end
